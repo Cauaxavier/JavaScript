@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com o DOM</title>
+    <style>
+        body {
+            background-color: rgb(173, 179, 255);
+            color: white;
+            font: normal 14pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inciando os estudos DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>apredendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div id="elemento0">clique em mim</div><br>
+    <div class="elemento1">não clique em mim</div><br>
+    <div name="elemento2">clique se quiser</div><br>
+    <script>
+        var t1 = window.document.getElementsByTagName('p')[1] // t = teste
+        var t2 = document.getElementById('elemento0')
+        var t3 = document.getElementsByClassName('elemento1')[0]
+        var t4 = document.getElementsByName('elemento2')[0]
+        var t5 = document.querySelector('div#elemento0')
+
+        document.write(`o primeiro parágrafo: ${t1.innerHTML} <br>`) /*pegando elementos da árvore DOM por MARCA*/
+        document.write(`o resultado vai ser: ${t2.innerHTML} <br>`)/*pegando elementos da árvore DOM por ID*/
+        document.write(`O resultado vai ser: ${t3.innerHTML} <br>`)/*pegando elementos da árvore DOM por CLASS*/
+        document.write(`o resultado vai ser: ${t4.innerHTML} <br>`)/*pegando elementos da árvore DOM por NAME*/
+        document.write(`o resultado vai ser: ${t5.innerHTML}`)/*usando o metodo mais recomendado de todos: por SELETOR(obs: alguns navegadores não esse tipo)*/
+    </script>
+</body>
+</html>

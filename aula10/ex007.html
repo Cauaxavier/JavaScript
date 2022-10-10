@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>somador</title>
+    <style>
+        body {
+            font: normal 18pt Arial;
+        }
+
+        div#r {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>somando valores</h1>
+    <input type="number" name="txt1" id="txt1"> +
+    <input type="number" name="txt2" id="txt2">
+    <input type="button" value="Somar" id="som">
+    <div id="r"></div>
+    <script>
+        var soma = document.querySelector('input#som')
+        soma.addEventListener('click', somar)
+
+        function somar() {
+            var ntxt1 = document.querySelector('input#txt1')
+            var ntxt2 = document.querySelector('input#txt2')
+            var res = document.querySelector('div#r')
+            var n1 = parseInt(ntxt1.value)
+            var n2 = parseInt(ntxt2.value)
+            var s = n1 + n2
+            res.innerHTML = `a soma entre ${n1} e ${n2} é <strong>${s}</strong>` 
+        }
+    </script>
+</body>
+</html>

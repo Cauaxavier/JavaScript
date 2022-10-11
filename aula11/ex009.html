@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are you brazilian?</title>
+</head>
+<body>
+    <h1>Brasilsilsilsilsil!!!</h1>
+    <input type="text" name="nac" id="nac" placeholder="nação">
+    <input type="submit" value="enviar" id="botao">
+    <div id="res"></div>
+
+    <script>
+        var envio = document.querySelector('input#botao')
+        envio.addEventListener('click', nasc)
+
+        function nasc() {
+            const ncl = document.querySelector('input#nac')
+            const r = document.querySelector('div#res')
+            const n = String(ncl.value)
+
+            r.innerHTML = `vivendo no(a) <strong>${n}</strong><br>`
+            if (n == 'Brasil') {
+                r.innerHTML += `Você é brasileiro.`
+            } else {
+                r.innerHTML += `Você é estrangeiro.`
+            }
+        }
+    </script>
+</body>
+</html>

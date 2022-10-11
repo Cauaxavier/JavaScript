@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+</head>
+<body>
+    <h1>Aplicador de multas</h1>
+    <input type="number" name="km" id="km">
+    <input type="submit" value="aplicar" id="botao">
+    <div id="res"></div>
+    <script>
+        var clicar = document.querySelector('input#botao')
+        clicar.addEventListener('click', multa)
+
+        function multa() {
+            const mlt = document.querySelector('input#km')
+            const r = document.querySelector('div#res')
+            const m = Number(mlt.value)
+
+            r.innerHTML = `a velocidade do seu carro é <strong>${m}km/h.</strong> <br>`
+            if (m > 60) {
+                r.innerHTML += 'Você está multado. <br>'
+            }
+            r.innerHTML += 'Dirija usando sempre o sinto de segurança.'
+        }
+    </script>
+</body>
+</html>

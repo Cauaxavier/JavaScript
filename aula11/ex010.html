@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exército</title>
+</head>
+<body>
+    <h1>Devo servir ao exército?</h1>
+    <input type="number" name="phpzin" id="numero">
+    <input type="button" value="enviar" id="clicar">
+    <div id="res"></div>
+
+    <script>
+        var envio = document.querySelector('input#clicar')
+        envio.addEventListener('click', verificar)
+
+        function verificar() {
+            const maior = document.querySelector('input#numero')
+            const r = document.querySelector('div#res')
+            const m = parseInt(maior.value)
+
+            r.innerHTML = `a sua idade é <strong>${m} anos.</strong> <br>`
+            if (m >= 18) {
+                r.innerHTML += 'Você é maior de idade. Precisa servir ao exército'
+            } else{
+                r.innerHTML += 'Você é menor de idade. Não precisa servir ao exército'
+            } 
+        }
+    </script>
+</body>
+</html>
